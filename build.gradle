@@ -39,7 +39,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     archives sourcesJar
     archives javadocJar
 }
-// To specify a license in the pom:
+ // To specify a license in the pom:
 install {
   repositories.mavenInstaller {
     pom.project {
