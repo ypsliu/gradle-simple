@@ -18,6 +18,9 @@ group = 'com.github.jitpack'
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
+ scmVersion {
+     ignoreUncommittedChanges = false
+ }
 project.version = scmVersion.version
 
 task sourcesJar(type: Jar, dependsOn: classes) {
