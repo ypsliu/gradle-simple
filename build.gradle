@@ -1,3 +1,15 @@
+ plugins {
+        id 'groovy'
+        id 'pl.allegro.tech.build.axion-release' version '1.10.2'
+    }
+
+repositories {
+    mavenCentral()
+}
+    dependencies {
+        compile 'com.google.guava:guava:18.0'
+    }
+ 
 apply plugin: 'java'
 apply plugin: 'maven'
 
@@ -6,13 +18,7 @@ group = 'com.github.jitpack'
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compile 'com.google.guava:guava:18.0'
-}
+project.version = scmVersion.version
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
@@ -44,7 +50,9 @@ install {
   }
 }
 
+
 wrapper {
     gradleVersion = "5.1.1"
     distributionType = Wrapper.DistributionType.ALL
 }
+
